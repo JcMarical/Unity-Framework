@@ -24,12 +24,7 @@ public class RoleListCmd:Cmd
     public List<SelectRoleInfo> AllRole = new List<SelectRoleInfo>();
 
 }
-//选择的角色 C-->S
-public class SelectRoleCmd : Cmd
-{
-    //角色索引
-    public int Index;
-}
+
 
 //选人界面角色结构，要和RoleList一起发出去
 public class SelectRoleInfo
@@ -37,4 +32,39 @@ public class SelectRoleInfo
     public string Name;         //角色名
     //public string ModelResPath; //模型资源路径
     public int ModelID;
+}
+
+//选择的角色 C-->S
+public class SelectRoleCmd : Cmd
+{
+    //角色索引
+    public int Index;
+}
+
+/// <summary>
+/// 主角ThisID S-->C
+/// </summary>
+public class MainRoleThisIDCmd : Cmd
+{
+    //角色唯一标识
+    public int ThisID;
+
+}
+
+public class EnterMapCmd : Cmd
+{
+    public int MapID;
+}
+
+/// <summary>
+/// 创建角色
+/// </summary>
+public class CreateSceneRoleCmd : Cmd
+{
+    public int ThisID; //角色的唯一标识：服务器和客户端辨别一个角色的唯一标识
+    public string Name; //角色名
+    public int ModelID; //模型ID
+    
+    public Vector3 Pos; //角色出生位置
+    public Vector3 FaceTo; //角色出生朝向
 }

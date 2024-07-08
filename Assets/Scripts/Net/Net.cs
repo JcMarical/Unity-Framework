@@ -26,6 +26,9 @@ public class Net : Singleton<Net>, IClient
     public Net()
     {
         _parser.Add(typeof(RoleListCmd), UserData.OnRoleList);
+        _parser.Add(typeof(MainRoleThisIDCmd), RoleMgr.OnMainRoleThisID);
+        _parser.Add(typeof(EnterMapCmd), SceneMgr.OnEnterMap);
+        _parser.Add(typeof(CreateSceneRoleCmd), RoleMgr.OnCreateSceneRole);
         //添加角色列表
 
     }
